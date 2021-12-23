@@ -1,4 +1,4 @@
-# Script Python PyAmecycl
+# Script Python PyAmecycl [![](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
 Script python pour traiter les fichiers conformes au **schéma de données des aménagements cyclables**
 
