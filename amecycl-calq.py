@@ -13,7 +13,7 @@
 __author__ = "ToutesLatitudes"
 __copyright__ = "Copyright 2021, ToutesLatitudes"
 __license__ = "GPL"
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 __email__ = "contact@touteslatitudes.fr"
 __status__ = "Production"
 
@@ -27,7 +27,16 @@ import sqlite3
 # à installer via la commande : pip install geojson-length
 from geojson_length import calculate_distance, Unit
 
+# filtrage des proprietes commençant par un undescore
+def underscored(key):
+    if (key[0] == '_'):
+        return True
+    else:
+        return False
+
+
 start = time.time()
+
 
 parser = argparse.ArgumentParser(description='Création des couches Aménagements Cyclables')
 parser.add_argument('filename', metavar='F', type=str, nargs='+',
@@ -137,8 +146,18 @@ with open(ame_file) as json_data:
         # suppression de la propriete geom si elle existe
         if ('geom' in feature['properties']):
             del feature['properties']['geom']
+        # filtrage des proprietes. on ecarte les proprietes qui commencent par '_'
+        fprop = {}
+        for key, value in feature['properties'].items():
+            if not underscored(key):
+                fprop[key] = value
+        # tri des proprietes sur la clé
+        sfprop = {}
+        for elem in sorted(fprop.items()):
+            sfprop[elem[0]] = elem[1]
+
         # sauvegarde de la couche au format geojson
-        fdic = {"type": "Feature", "geometry": feature['geometry'], "properties": feature['properties']}
+        fdic = {"type": "Feature", "geometry": feature['geometry'], "properties": sfprop}
         json_string = json.dumps(fdic, separators=(',', ':'))
 
         add_schema_entry(

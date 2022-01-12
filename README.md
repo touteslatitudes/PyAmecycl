@@ -37,3 +37,17 @@ Pour le détail du schéma de données voir :
 
 [Amecycl – Dessine moi les aménagements cyclables de ma ville … ](https://randovelo.touteslatitudes.fr/amecycl/)
 
+## Versions : 
+
+
+**Version 1.1.0**  
+13/01/2022  
+
+- filtrage des propriétés commençant par '_' 
+- tri des propriétés pour un affichage plus facile
+
+
+**Version 1.0.0**  
+23/12/2021  
+
+Version initiale 
