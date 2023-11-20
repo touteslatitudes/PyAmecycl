@@ -7,7 +7,7 @@ Ces données peuvent ensuite être consultées un client SQLite tel que [SQLiteB
 
 Il produit les calques au format .geojson de chaque type d'aménagement. Ces calques peuvent être réutilisés pour produire une carte uMap.
 
-Le fichier doit être conforme à la version **0.3.3** du schéma de données des aménagements cyclables 
+Le fichier doit être conforme à la version **0.3.3** ou **0.3.4** du schéma de données des aménagements cyclables 
 
 Pour le détail du schéma de données voir : 
 * https://schema.data.gouv.fr/etalab/schema-amenagements-cyclables/ 
@@ -25,9 +25,9 @@ Pour le détail du schéma de données voir :
 
 ## Utilisation du script PyAmecycl :
 
-- via la fenêtre de commandes, positionnez vous dans le répertoire PyAmecycl qui contient le script **amecycl-calc.py**
+- via la fenêtre de commandes, positionnez vous dans le répertoire PyAmecycl qui contient le script **amecycl-calq.py**
 
-- taper la commande : **python amecycl-calc.py epci.geojson** où epci.geojson est le fichier des aménagements cyclables à traiter
+- taper la commande : **python amecycl-calq.py epci.geojson** où epci.geojson est le fichier des aménagements cyclables à traiter
 
 
 
@@ -38,6 +38,11 @@ Pour le détail du schéma de données voir :
 [Amecycl – Dessine moi les aménagements cyclables de ma ville … ](https://randovelo.touteslatitudes.fr/amecycl/)
 
 ## Versions : 
+
+**Version 1.2.0**  
+20/11/2023 
+
+- suppression d'une contrainte NOT NULL sur la colonne osm car certains identifiants osm peuvent à null
 
 
 **Version 1.1.0**  

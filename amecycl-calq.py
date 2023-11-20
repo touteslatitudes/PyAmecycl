@@ -13,7 +13,7 @@
 __author__ = "ToutesLatitudes"
 __copyright__ = "Copyright 2021, ToutesLatitudes"
 __license__ = "GPL"
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 __email__ = "contact@touteslatitudes.fr"
 __status__ = "Production"
 
@@ -80,7 +80,7 @@ def drop_schema_table():
 def create_schema_table():
     create_table_query = '''CREATE TABLE IF NOT EXISTS Schema (
                                 id INTEGER PRIMARY KEY,
-                                id_osm INTEGER NOT NULL,
+                                id_osm INTEGER,
                                 ame_d TEXT, 
                                 sens_d TEXT, 
                                 ame_g TEXT, 
