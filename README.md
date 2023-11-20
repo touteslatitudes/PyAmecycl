@@ -42,7 +42,7 @@ Pour le détail du schéma de données voir :
 **Version 1.2.0**  
 20/11/2023 
 
-- suppression d'une contrainte NOT NULL sur la colonne osm car certains identifiants osm peuvent à null
+- suppression d'une contrainte NOT NULL sur la colonne id_osm car certains identifiants id_osm peuvent à null
 
 
 **Version 1.1.0**  
